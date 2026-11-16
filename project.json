@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "name": "incubator",
+  "projectType": "library",
+  "root": ".",
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run lint"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "pezza-phase-1-start",
+  "projectType": "application",
+  "root": "Phase 1 - Angular Fundamentals/src/01. StartProject",
+  "sourceRoot": "Phase 1 - Angular Fundamentals/src/01. StartProject/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build --workspace=pezza-phase-1-start"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test --workspace=pezza-phase-1-start"
+      }
+    }
+  },
+  "tags": ["scope:phase-1", "type:application", "variant:start"]
+}

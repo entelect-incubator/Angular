@@ -1,0 +1,17 @@
+<article class="pizza-card">
+  <div class="pizza-illustration" aria-hidden="true">
+    <span class="pizza-art"></span>
+  </div>
+  <div class="pizza-content">
+    <p class="pizza-label">{{ pizza().label }}</p>
+    <h3>{{ pizza().name }}</h3>
+    <p class="description">{{ pizza().description }}</p>
+    <p class="ingredients">{{ pizza().ingredients }}</p>
+    <div class="pizza-footer">
+      <p class="price">R {{ pizza().price }} <span>each</span></p>
+      <button type="button" (click)="add.emit(pizza())">
+        Add <span class="visually-hidden">{{ pizza().name }}</span>
+      </button>
+    </div>
+  </div>
+</article>

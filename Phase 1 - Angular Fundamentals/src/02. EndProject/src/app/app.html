@@ -1,0 +1,54 @@
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Pezza home">Pezza</a>
+  <nav aria-label="Main navigation">
+    <a href="#menu">Menu</a>
+    <a href="#menu">Our story</a>
+  </nav>
+  <span class="basket-count" aria-label="Basket is empty">Basket <strong>0</strong></span>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Good food. Good company.</p>
+      <h1 id="hero-title">A little slice<br />of <span>happiness.</span></h1>
+      <p>Hand-stretched dough, bright ingredients, and a table worth gathering around.</p>
+      <a class="primary-link" href="#menu">Explore the menu <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <span class="sun"></span>
+      <span class="pizza-art">P</span>
+      <span class="hero-note">Made with<br />a little amore</span>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu" aria-labelledby="menu-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">From our oven</p>
+        <h2 id="menu-title">The favourites</h2>
+      </div>
+      <p>Simple ingredients, big-hearted flavour.</p>
+    </div>
+
+    @if (pizzas.length > 0) {
+      <div class="pizza-grid">
+        @for (pizza of pizzas; track pizza.id) {
+          <app-pizza-card [pizza]="pizza" (add)="addToBasket($event)" />
+        }
+      </div>
+    } @else {
+      <p class="empty-state">The menu is taking a little break. Please check back soon.</p>
+    }
+
+    @if (addedMessage) {
+      <p class="status-message" role="status">{{ addedMessage }}</p>
+    }
+  </section>
+</main>
+
+<footer class="site-footer">
+  <a class="brand" href="/" aria-label="Pezza home">Pezza</a>
+  <p>Good things take dough.</p>
+  <span>Made for the Angular Incubator</span>
+</footer>

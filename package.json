@@ -1,0 +1,30 @@
+{
+  "name": "entelect-angular-incubator",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@12.2.1",
+  "engines": {
+    "node": "^24.15.0"
+  },
+  "workspaces": [
+    "Phase 1 - Angular Fundamentals/src/01. StartProject",
+    "Phase 1 - Angular Fundamentals/src/02. EndProject"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=pezza-phase-1-start",
+    "start:end": "npm run start --workspace=pezza-phase-1-end",
+    "build:all": "nx run-many --target=build",
+    "test:all": "nx run-many --target=test",
+    "lint": "oxlint --deny-warnings .",
+    "ci": "nx run-many --target=build --target=test --target=lint"
+  },
+  "overrides": {
+    "nx": {
+      "minimatch": "^11.0.8"
+    }
+  },
+  "devDependencies": {
+    "nx": "24.0.6",
+    "oxlint": "1.93.0"
+  }
+}
