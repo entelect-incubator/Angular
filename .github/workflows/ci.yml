@@ -36,3 +36,6 @@ jobs:
 
       - name: Run Nx build, test, and Oxlint targets
         run: npm run ci
+
+      - run: npx nx fix-ci
+        if: always()
